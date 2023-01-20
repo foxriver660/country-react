@@ -11,26 +11,30 @@ import { useNavigate } from "react-router-dom";
 const HomePage = ({ countries, setCountries }) => {
   const [filteredCountries, setfilteredCountries] = useState([]);
   const handleSearch = (search, region) => {
-    let data = [...countries]
-    if(region){
-      data = data.filter(item => item.region.includes(region))
+    let data = [...countries];
+    if (region) {
+      data = data.filter((item) => item.region.includes(region));
     }
-    if(search){
-      data = data.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
+    if (search) {
+      data = data.filter((item) =>
+        item.name.toLowerCase().includes(search.toLowerCase())
+      );
     }
-    setfilteredCountries(data)
-  }
+    setfilteredCountries(data);
+  };
   useEffect(() => {
     handleSearch();
     // eslint-disable-next-line
   }, [countries]);
-  console.log('RENDER HOMAPAGE')
+  console.log("RENDER HOMAPAGE");
   useEffect(() => {
     if (!countries.length)
       axios.get(ALL_COUNTRIES).then(({ data }) => setCountries(data));
   }, []);
   const navigate = useNavigate();
-const uploadCountries = !filteredCountries.length ? countries : filteredCountries
+  const uploadCountries = !filteredCountries.length
+    ? countries
+    : filteredCountries;
   return (
     <>
       <Controls onSearch={handleSearch} />
