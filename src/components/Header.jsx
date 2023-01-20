@@ -3,9 +3,8 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Container } from "./Container";
 import { IoMoon, IoMoonOutline } from "react-icons/io5";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 const HeaderEl = styled.header`
-  
   box-shadow: var(--shadow);
   background-color: var(--colors-ui-base);
 `;

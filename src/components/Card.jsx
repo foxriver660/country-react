@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useLocation } from "react-router-dom";
+
 const Wrapper = styled.article`
   border-radius: var(--radius);
   background-color: var(--colors-ui-base);
@@ -30,9 +30,9 @@ const CardList = styled.ul`
   padding: 1rem 0 0;
 `;
 const CardListItem = styled.li`
-font-size: var(--fs-sm);
-line-height: 1.5;
-font-weight: var(--fw-light);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  font-weight: var(--fw-light);
 `;
 const Card = ({ name, img, info = [], onClick }) => {
   return (
@@ -43,7 +43,7 @@ const Card = ({ name, img, info = [], onClick }) => {
         <CardList>
           {info.map((item) => (
             <CardListItem key={item.title}>
-              <b>{item.title}</b> {item.description}
+              <b>{item.title}:</b> {item.description}
             </CardListItem>
           ))}
         </CardList>

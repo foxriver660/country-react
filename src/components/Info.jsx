@@ -2,7 +2,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { filterByCode } from "../config";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Wrapper = styled.section`
   margin-top: 3rem;
   width: 100%;
@@ -160,7 +160,9 @@ export const Info = (props) => {
           ) : (
             <TagGroup>
               {neighbors.map((b) => (
-                <Tag key={b} onClick={()=>navigate(`/country/${b}`)}>{b}</Tag>
+                <Tag key={b} onClick={() => navigate(`/country/${b}`)}>
+                  {b}
+                </Tag>
               ))}
             </TagGroup>
           )}

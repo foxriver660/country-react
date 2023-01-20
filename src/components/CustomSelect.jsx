@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Select from "react-select";
 
@@ -31,14 +30,14 @@ export const CustomSelect = styled(Select).attrs({
 
   & > * {
     box-shadow: var(--shadow);
-  };
+  }
   & input {
     padding-left: 0.25rem;
-  };
+  }
   & * {
     color: var(--colors-text) !important;
-  };
+  }
   & > div[id] {
-    background-color: var(--colors-ui-base)
-  };
+    background-color: var(--colors-ui-base);
+  }
 `;
