@@ -13,12 +13,7 @@ function App() {
       <Header />
       <Main>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <HomePage countries={countries} setCountries={setCountries} />
-            }
-          />
+          <Route path="/country-react" element={<HomePage countries={countries} setCountries={setCountries} />} />
           <Route path="/country/:name" element={<Detail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
